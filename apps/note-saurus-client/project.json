@@ -20,7 +20,10 @@
           "apps/note-saurus-client/src/favicon.ico",
           "apps/note-saurus-client/src/assets"
         ],
-        "styles": ["apps/note-saurus-client/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/note-saurus-client/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
