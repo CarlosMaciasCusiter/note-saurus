@@ -8,16 +8,12 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/note-saurus-client",
         "index": "apps/note-saurus-client/src/index.html",
         "browser": "apps/note-saurus-client/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/note-saurus-client/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
