@@ -1,0 +1,69 @@
+{
+  "name": "note-saurus-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "note-saurus",
+  "sourceRoot": "apps/note-saurus-client/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/note-saurus-client",
+        "index": "apps/note-saurus-client/src/index.html",
+        "browser": "apps/note-saurus-client/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/note-saurus-client/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/note-saurus-client/src/favicon.ico",
+          "apps/note-saurus-client/src/assets"
+        ],
+        "styles": ["apps/note-saurus-client/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "note-saurus-client:build:production"
+        },
+        "development": {
+          "buildTarget": "note-saurus-client:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "note-saurus-client:build"
+      }
+    }
+  }
+}

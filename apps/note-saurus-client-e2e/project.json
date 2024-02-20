@@ -1,0 +1,8 @@
+{
+  "name": "note-saurus-client-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/note-saurus-client-e2e/src",
+  "targets": {},
+  "implicitDependencies": ["note-saurus-client"]
+}
