@@ -30,6 +30,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
-
       - run: npx nx-cloud record -- nx format:check
+      - run: npx playwright install --with-deps
       - run: npx nx affected -t lint test build e2e-ci
